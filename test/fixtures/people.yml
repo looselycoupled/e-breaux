@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  identifier: MyString
+  access_token: MyString
+  like_probability: 9.99
+
+two:
+  name: MyString
+  identifier: MyString
+  access_token: MyString
+  like_probability: 9.99

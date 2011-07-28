@@ -1,4 +1,23 @@
 EBreaux::Application.routes.draw do
+
+  get "dashboard/index"
+
+  get "welcome/index"
+
+  get "welcome/about"
+
+  get "welcome/privacy"
+
+  root :to => "welcome#index"
+  
+  resource :facebook, :except => :create do
+    get :callback, :to => :create
+    get :optin, :to => :new
+    get :confirm
+  end
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
