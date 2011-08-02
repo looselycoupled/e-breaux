@@ -9,9 +9,6 @@ class WelcomeController < ApplicationController
   def about
   end
 
-  def login
-  end
-  
   def logout
     unauthenticate
     redirect_to :controller => :welcome, :action => :index
