@@ -1,19 +1,18 @@
 EBreaux::Application.routes.draw do
 
-  get "dashboard/index"
 
   get "welcome/index"
-
   get "welcome/about"
-
   get "welcome/privacy"
 
+  match 'logout' => 'welcome#logout', :as => :logout
+
+  match 'dashboard' => 'dashboard#index', :as => :dashboard
+  
   root :to => "welcome#index"
   
   resource :facebook, :except => :create do
     get :callback, :to => :create
-    get :optin, :to => :new
-    get :confirm
   end
 
 
@@ -73,5 +72,5 @@ EBreaux::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end

@@ -3,9 +3,7 @@ class WelcomeController < ApplicationController
   layout :choose_layout
   
   def index
-    if !current_user.nil?
-      redirect_to :controller => :dashboard
-    end
+    redirect_to dashboard_url if authenticated?
   end
 
   def about
@@ -15,6 +13,8 @@ class WelcomeController < ApplicationController
   end
   
   def logout
+    unauthenticate
+    redirect_to :controller => :welcome, :action => :index
   end
 
   def privacy

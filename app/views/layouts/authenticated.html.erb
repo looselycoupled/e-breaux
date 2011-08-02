@@ -1,7 +1,12 @@
 
 <% content_for :content do %>
-  This is the authenticated layout<hr>
-
+  <div id="greeting">Hello <%= current_user.profile.first_name %>, <%= link_to "logout", logout_url %></div>
+  <div id="subnav">
+    <ul>
+      <li><%= link_to "Dashboard", dashboard_url %></li>
+      <li><%= link_to "Targets", "/" %></li>
+    </ul>
+  </div>
   <%= yield %>
 
 <% end %>
