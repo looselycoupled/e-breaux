@@ -1,6 +1,6 @@
 
 <% content_for :content do %>
-  <div id="greeting">Hello <%= current_user.profile.first_name %>, <%= link_to "logout", logout_url %></div>
+  <div id="greeting">Hello <%= current_user.first_name %>, <%= link_to "logout", logout_url %></div>
   <div id="subnav">
     <ul>
       <li><%= link_to "Dashboard", dashboard_url %></li>

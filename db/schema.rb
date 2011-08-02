@@ -13,6 +13,8 @@
 ActiveRecord::Schema.define(:version => 20110725194706) do
 
   create_table "facebooks", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "identifier"
     t.string   "access_token"
     t.datetime "created_at"
@@ -22,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20110725194706) do
   create_table "people", :force => true do |t|
     t.string   "name"
     t.string   "identifier"
-    t.string   "access_token"
     t.decimal  "like_probability"
     t.datetime "created_at"
     t.datetime "updated_at"
