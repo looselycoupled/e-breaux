@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
 
   def logout
     unauthenticate
-    redirect_to :controller => :welcome, :action => :index
+    redirect_to root_url
   end
 
   def privacy

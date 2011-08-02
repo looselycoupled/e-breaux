@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  facebook_id: 1
+  target_id: 1
+  chance_to_take_action: 9.99
+  chance_to_like: 9.99
+
+two:
+  facebook_id: 1
+  target_id: 1
+  chance_to_take_action: 9.99
+  chance_to_like: 9.99

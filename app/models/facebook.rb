@@ -1,9 +1,6 @@
 class Facebook < ActiveRecord::Base
-  belongs_to :person, :primary_key => :identifier, :foreign_key => :identifier
-  
-  # def profile
-  #   @profile ||= FbGraph::User.me(self.access_token).fetch
-  # end
+  has_many :subscriptions
+  has_many :targets, :through => :subscriptions
 
   class << self
     extend ActiveSupport::Memoizable
