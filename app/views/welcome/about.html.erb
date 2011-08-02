@@ -1,2 +1,11 @@
 <h1>Welcome#about</h1>
 <p>Find me in app/views/welcome/about.html.erb</p>
+
+<%
+fb_auth = FbGraph::Auth.new("137544799663380", "a86904195a7b41d06f018cd8d9e32dd1")
+
+# user = FbGraph::User.me(fb_auth.access_token).fetch
+
+%>
+
+<%= fb_auth.authorized? %>

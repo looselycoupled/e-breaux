@@ -1,2 +1,22 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Public Welcome</h1>
+
+<div id="fb-root"></div>
+<fb:profile-pic uid="" size="normal" facebook-logo="true"></fb:profile-pic>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+   FB.init({ 
+      appId:'137544799663380', cookie:true, 
+      status:true, xfbml:true 
+   });
+</script>
+<fb:login-button onlogin="location.href = '/welcome/about'"  perms="email,publish_stream" >Login with Facebook</fb:login-button>
+
+
+<%
+fb_auth = FbGraph::Auth.new("137544799663380", "a86904195a7b41d06f018cd8d9e32dd1")
+
+# user = FbGraph::User.me(fb_auth.access_token).fetch
+
+%>
+
+<%= fb_auth.authorized? %>
