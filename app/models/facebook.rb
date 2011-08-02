@@ -2,6 +2,34 @@ class Facebook < ActiveRecord::Base
   has_many :subscriptions
   has_many :targets, :through => :subscriptions
 
+  def profile
+    @profile ||= FbGraph::User.me(access_token).fetch
+  end
+
+  def friends
+    @friends ||= profile.friends
+  end
+
+
+  def is_friend?(target)
+    identifier = (target.instance_of? String) ? target : target.identifier
+    friends.any?{|f| f.identifier == identifier}
+  end
+
+  def is_target?(target)
+    identifier = (target.instance_of? String) ? target : target.identifier
+    targets.any?{|f| f.identifier == identifier}
+  end
+
+  def subscribe(target)
+    targets << target
+  end
+  
+  def unsubscribe(target)
+    identifier = (target.instance_of? String) ? target : target.identifier
+    targets.find_by_identifier(identifier).delete
+  end
+
   class << self
     extend ActiveSupport::Memoizable
 

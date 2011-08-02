@@ -1,6 +1,16 @@
 EBreaux::Application.routes.draw do
 
 
+  get "targets/index", :as => :targets
+
+  get "targets/add"
+
+  get "targets/subscribe"
+
+  get "targets/unsubscribe"
+
+  get "targets/delete"
+
   get "welcome/index"
   get "welcome/about"
   get "welcome/privacy"

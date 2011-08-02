@@ -1,0 +1,12 @@
+<h1>Add Target</h1>
+
+
+<div>
+  <ul>
+<% current_user.friends.each do |f| 
+     if !current_user.is_target?(f.identifier) %>
+  <li><img src='http://graph.facebook.com/<%= f.identifier %>/picture?type=square' /> <%= link_to f.name, :action => :subscribe, :identifier => f.identifier %></li>
+<%   end 
+   end%>
+</ul>
+</div>

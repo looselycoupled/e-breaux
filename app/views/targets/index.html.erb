@@ -1,0 +1,11 @@
+<h1>Target List</h1>
+<%= link_to 'Add Target', :action => :add %>
+
+
+<ul>
+  <% current_user.targets.each do |t| %>
+  <li><%= t.name %>
+    <%= link_to "unsubscribe", :action => :unsubscribe, :identifier => t.identifier %>
+  </li>
+  <% end %>
+</ul>

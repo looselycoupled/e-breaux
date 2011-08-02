@@ -43,6 +43,7 @@ GEM
     fb_graph (1.9.4)
       httpclient (>= 2.2.0.2)
       rack-oauth2 (>= 0.8.0)
+    gritter (0.6.1)
     highline (1.6.2)
     httpclient (2.2.1)
     i18n (0.5.0)
@@ -111,6 +112,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   fb_graph
+  gritter
   rails (= 3.0.9)
   ruby-debug
   sqlite3

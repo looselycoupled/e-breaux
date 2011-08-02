@@ -21,14 +21,6 @@ ActiveRecord::Schema.define(:version => 20110802035525) do
     t.datetime "updated_at"
   end
 
-  create_table "people", :force => true do |t|
-    t.string   "name"
-    t.string   "identifier"
-    t.decimal  "like_probability"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "subscriptions", :force => true do |t|
     t.integer  "facebook_id"
     t.integer  "target_id"
@@ -39,8 +31,7 @@ ActiveRecord::Schema.define(:version => 20110802035525) do
   end
 
   create_table "targets", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "identifier"
     t.datetime "created_at"
     t.datetime "updated_at"
