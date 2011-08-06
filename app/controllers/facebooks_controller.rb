@@ -29,6 +29,11 @@ class FacebooksController < ApplicationController
     end
   end
 
+
+  def impersonate
+    session[:current_user] = params[:id]
+    redirect_to root_url
+  end
   # 
   # # handle Normal OAuth flow: start
   # def new
