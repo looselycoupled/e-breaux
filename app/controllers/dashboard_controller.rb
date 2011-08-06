@@ -4,15 +4,6 @@ class DashboardController < ApplicationController
   layout "authenticated"
 
   def index
-    # @posts = Egeaux::Ebreaux.scan(current_user.access_token)
-    # access_token = current_user.access_token
-
-    # access_token = Facebook.last.access_token
-    # 
-    # 
-    # # code belongs in lib
-    # fb = FbGraph::User.me(access_token).fetch
-    # @posts = fb.posts
     
   end
   
@@ -28,9 +19,23 @@ class DashboardController < ApplicationController
     
   end
   
-  # 
-  def post
-    
+  
+  private 
+  
+  def fetch_target(target, access_token)
+    FbGraph::User.fetch(target.identifier, :access_token => access_token)
   end
+  
+  def fetch_posts(target, access_token)
+    fb = fetch_target(target, access_token)
+    fb.posts
+  end
+  
+  
+  
+  
+  
+  
+  
 
 end

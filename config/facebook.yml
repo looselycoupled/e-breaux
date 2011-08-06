@@ -1,7 +1,7 @@
 development: &defaults
   client_id: 137544799663380
   client_secret: a86904195a7b41d06f018cd8d9e32dd1
-  perms: publish_stream,email
+  perms: publish_stream,offline_access
 
 test:
   <<: *defaults
