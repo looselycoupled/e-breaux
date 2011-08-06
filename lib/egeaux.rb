@@ -47,14 +47,10 @@ module Egeaux
     
     private
     
-    def schedule_responses(post)
+    def self.schedule_responses(post)
       
       post.target.subscriptions.each do |s|
-        user = s.facebook
-        target = s.target
-        
-        schedule(user,target)
-        
+        schedule(s)
       end
       
     end
