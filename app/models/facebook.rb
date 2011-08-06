@@ -10,6 +10,10 @@ class Facebook < ActiveRecord::Base
     @friends ||= profile.friends
   end
 
+  def posts
+    @posts ||= profile.home
+  end
+
 
   def is_friend?(target)
     identifier = (target.instance_of? String) ? target : target.identifier
