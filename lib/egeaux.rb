@@ -36,8 +36,12 @@ module Egeaux
     end
     
     # schedule a future action (like or comment)
-    def self.schedule
-      
+    def self.schedule(user,target)
+      # r = Response.new
+      # if comment?
+      #   
+      # end
+      # (rand(59) +2).minutes.from_now
     end
     
     
@@ -49,6 +53,7 @@ module Egeaux
         user = s.facebook
         target = s.target
         
+        schedule(user,target)
         
       end
       
