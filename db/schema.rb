@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110806213155) do
+ActiveRecord::Schema.define(:version => 20110806215347) do
 
   create_table "comments", :force => true do |t|
     t.string   "message"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(:version => 20110806213155) do
     t.integer  "target_id"
     t.string   "message"
     t.datetime "fb_created_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "responses", :force => true do |t|
+    t.integer  "facebook_id"
+    t.integer  "post_id"
+    t.integer  "comment_id"
+    t.datetime "respond_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

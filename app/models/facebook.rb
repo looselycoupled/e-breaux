@@ -1,5 +1,6 @@
 class Facebook < ActiveRecord::Base
-  has_many :subscriptions
+  has_many :subscriptions 
+  has_many :responses
   has_many :targets, :through => :subscriptions
 
   def profile

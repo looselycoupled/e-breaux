@@ -36,12 +36,16 @@ module Egeaux
     end
     
     # schedule a future action (like or comment)
-    def self.schedule(user,target)
-      # r = Response.new
+    def self.schedule(user, post)
+      r = Response.new
+      r.facebook = user
+      r.post = post
       # if comment?
-      #   r.comment = Comment.random
+        r.comment = Comment.random
       # end
-      # r.publish_at = (rand(59) +2).minutes.from_now
+      r.respond_at = (rand(59) +2).minutes.from_now
+      r.save
+      
     end
     
     
@@ -50,7 +54,7 @@ module Egeaux
     def self.schedule_responses(post)
       
       post.target.subscriptions.each do |s|
-        schedule(s)
+        schedule(s.facebook, post)
       end
       
     end
@@ -67,12 +71,14 @@ module Egeaux
     end
     
     # default to comment 1/4 of time
-    def comment?
+    def self.comment?
       if rand(4) == 0
         false
       else
         true
       end
+      # added for testing
+      true
     end
     
   end
