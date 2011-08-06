@@ -30,10 +30,10 @@ class Facebook < ActiveRecord::Base
     targets << target
   end
   
-  def unsubscribe(target)
-    identifier = (target.instance_of? String) ? target : target.identifier
-    targets.find_by_identifier(identifier).delete
-  end
+  # def unsubscribe(target)
+  #   identifier = (target.instance_of? String) ? target : target.identifier
+  #   targets.find_by_identifier(identifier).delete
+  # end
 
   class << self
     extend ActiveSupport::Memoizable

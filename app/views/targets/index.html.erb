@@ -3,9 +3,9 @@
 
 
 <ul>
-  <% current_user.targets.each do |t| %>
-  <li><%= t.name %>
-    <%= link_to "unsubscribe", :action => :unsubscribe, :identifier => t.identifier %>
+  <% current_user.subscriptions.each do |s| %>
+  <li><%= s.target.name %>
+    <%= link_to "unsubscribe", :action => :unsubscribe, :id => s.id %>
   </li>
   <% end %>
 </ul>
