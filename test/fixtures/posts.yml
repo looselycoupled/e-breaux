@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  identifier: MyString
+  target_id: 1
+  message: MyString
+  fb_created_time: 2011-08-06 15:10:08
+
+two:
+  identifier: MyString
+  target_id: 1
+  message: MyString
+  fb_created_time: 2011-08-06 15:10:08
