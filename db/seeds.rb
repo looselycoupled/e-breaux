@@ -1,4 +1,5 @@
 # seed for Comments
+Comment.delete_all
 ["Love this!",
 "Thanks for passing this on.",
 "I can't believe I missed that!",

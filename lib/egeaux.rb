@@ -39,9 +39,9 @@ module Egeaux
     def self.schedule(user,target)
       # r = Response.new
       # if comment?
-      #   
+      #   r.comment = Comment.random
       # end
-      # (rand(59) +2).minutes.from_now
+      # r.publish_at = (rand(59) +2).minutes.from_now
     end
     
     
