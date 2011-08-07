@@ -5,7 +5,7 @@ namespace :ebreaux do
   task :scan => :environment do 
     message = "#{Time.now} Scanning for new posts"
     puts message
-    logger.info(message)
+    # logger.info(message)
     Subscription.all.each do |s|
       Egeaux::Ebreaux.scan(s)
     end
