@@ -30,7 +30,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{deploy_to}/../bin/restart"
+    # run "#{deploy_to}/../bin/restart"
   end
   
 end
