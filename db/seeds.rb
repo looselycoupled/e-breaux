@@ -31,7 +31,7 @@ Comment.delete_all
 "Not enough characters allowed in a comment for me to agree with this as much as I do",
 "What!? That's my favorite comic /sci-fi /or video game too!",
 "What a handsome idea!",
-"Just like an artificially flavored cloud intelligence would -( best if from Catherine)",
+"Just like an artificially flavored cloud intelligence would",
 "Totally! DRM has given this media such a short shelf life",
 "When will everyone else recognize that responsive design enables technically superior websites and physically superior designers",
 "More misunderstood than Peter Parker, more smart than Richards, more dapper than Tony Stark",
