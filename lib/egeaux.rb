@@ -1,6 +1,11 @@
 module Egeaux
   
   module Ebreaux
+
+    def self.reset
+      Response.delete_all
+      Post.delete_all
+    end
     
     def self.scan(subscription)
       target = subscription.target
