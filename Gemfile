@@ -1,11 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
-gem 'capistrano'
 gem 'fb_graph'
 gem 'gritter'
 
-# gem 'ruby-debug19', :require => 'ruby-debug'
+
+group :production do
+    gem 'capistrano'
+    gem 'mysql'
+end
+
 
 
 # Bundle gems for the local environment. Make sure to
@@ -15,6 +19,7 @@ gem 'gritter'
 group :development, :test do
     # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
     gem 'ruby-debug'
+    # gem 'ruby-debug19', :require => 'ruby-debug'
     gem 'sqlite3'
     gem 'sqlite3-ruby', :require => 'sqlite3'
 end
