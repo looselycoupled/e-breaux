@@ -1,7 +1,2 @@
 <div id="footer">
-  <% if session[:current_user] == 1  # TODO: DELETE IF STMT %>
-  <%= link_to "Login as Chuck", :controller => :facebooks, :action => :impersonate, :id => 2 %>
-  <% else  %>
-  <%= link_to "Login as Allen", :controller => :facebooks, :action => :impersonate, :id => 1 %>
-  <% end %>
 </div>
