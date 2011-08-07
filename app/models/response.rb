@@ -7,15 +7,15 @@ class Response < ActiveRecord::Base
   
   
   def self.pending
-    Response.where("respond_at < '#{Time.now.utc}'").where(:active => true)
+    Response.where("respond_at < '#{Time.now}'").where(:active => true)
   end
   
   def self.posted
-    Response.where("respond_at < '#{Time.now.utc}'").where(:active => false)
+    Response.where("respond_at < '#{Time.now}'").where(:active => false)
   end
   
   def self.scheduled
-    Response.where("respond_at > '#{Time.now.utc}'")
+    Response.where("respond_at > '#{Time.now}'")
   end
   
 end
