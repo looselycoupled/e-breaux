@@ -4,7 +4,6 @@ class DashboardController < ApplicationController
   layout "authenticated"
 
   def index
-    
   end
   
   # scan for new posts.  schedule responses
