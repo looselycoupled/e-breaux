@@ -3,12 +3,16 @@ namespace :ebreaux do
 
   desc "Pulls new posts from targets"
   task :scan => :environment do 
+    targets = []
     message = "#{Time.now} Scanning for new posts"
     puts message
     # logger.info(message)
     Subscription.all.each do |s|
-      puts "Beginning scan for #{s.target.name}"
-      Egeaux::Ebreaux.scan(s)
+      if !targets.include?(s.target)
+        targets << s.target
+        puts "Beginning scan for #{s.target.name}"
+        Egeaux::Ebreaux.scan(s)
+      end
     end
 
   end
