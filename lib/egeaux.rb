@@ -76,9 +76,15 @@ module Egeaux
     end
     
     def self.fetch_posts(target, access_token)
+      fetched_posts = []
       fb = fetch_target(target, access_token)
       posts = fb.posts
-      posts.map{|p| p unless p.message.nil? }
+      posts.each {|p|
+        if !p.message.nil?
+          fetched_posts << p
+        end
+      }
+      fetched_posts
     end
     
     # default to comment 1/4 of time
