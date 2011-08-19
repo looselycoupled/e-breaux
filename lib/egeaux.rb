@@ -14,8 +14,9 @@ module Egeaux
       # grab latest posts
       posts = fetch_posts(target, access_token)
 
-      # save most recent post if it's new
+      # save most recent post if it's new and schedule response
       if (target.posts.latest.try(:identifier) != posts.first.identifier) 
+        puts "New post found for #{target.name}"
         p = posts.first
         post = Post.new
         post.identifier = p.identifier
@@ -24,7 +25,9 @@ module Egeaux
         post.target = target
         post.save
         
-        schedule_responses(post)
+        puts "Scheduling responses..."
+        responses = schedule_responses(post)
+        puts "#{responses.length} responses scheduled"
       end
 
       
@@ -40,6 +43,17 @@ module Egeaux
       
     end
     
+    
+    private
+    
+    def self.schedule_responses(post)
+      responses = []
+      post.target.subscriptions.each do |s|
+        responses << schedule(s.facebook, post)
+      end
+      responses
+    end
+
     # schedule a future action (like or comment)
     def self.schedule(user, post)
       r = Response.new
@@ -50,19 +64,9 @@ module Egeaux
       # end
       r.respond_at = (rand(59) +2).minutes.from_now
       r.save
-      
+      r
     end
     
-    
-    private
-    
-    def self.schedule_responses(post)
-      
-      post.target.subscriptions.each do |s|
-        schedule(s.facebook, post)
-      end
-      
-    end
     
     
     def self.fetch_target(target, access_token)
