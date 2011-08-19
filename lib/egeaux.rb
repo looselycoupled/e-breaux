@@ -28,6 +28,8 @@ module Egeaux
         puts "Scheduling responses..."
         responses = schedule_responses(post)
         puts "#{responses.length} responses scheduled"
+      else
+        puts "No new posts found"
       end
 
       

@@ -7,6 +7,7 @@ namespace :ebreaux do
     puts message
     # logger.info(message)
     Subscription.all.each do |s|
+      puts "Beginning scan for #{s.target.name}"
       Egeaux::Ebreaux.scan(s)
     end
 
