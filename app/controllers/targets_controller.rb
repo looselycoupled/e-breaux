@@ -30,7 +30,7 @@ class TargetsController < ApplicationController
   end
 
   def unsubscribe
-    Subscription.find(:first,params[:id]).delete.save
+    Subscription.find(params[:id]).delete.save
     redirect_to :action => :index, :notice => "Your target has been removed"
   end
 

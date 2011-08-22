@@ -34,3 +34,10 @@ namespace :deploy do
   end
   
 end
+
+namespace :db do  
+  desc "Pulls down production database"
+  task :fetch do
+    
+  end
+end
