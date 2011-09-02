@@ -1,0 +1,5 @@
+Add more error handling to the codebase
+
+Add error model to record errors encountered
+  id, title, message, facebook_id, encountered_at, performing_action
+  
