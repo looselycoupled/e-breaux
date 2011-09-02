@@ -1,0 +1,10 @@
+<h1>Dashboard Reports</h1>
+
+
+<ul>
+<% @subscriptions.each do |s| %>
+  <li>
+    <div><%= s.facebook.first_name %> <%= s.facebook.last_name %> is following <%= s.target.name %></div>
+  </li>
+<% end %>
+</ul>

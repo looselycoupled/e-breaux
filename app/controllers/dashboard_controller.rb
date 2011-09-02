@@ -6,4 +6,8 @@ class DashboardController < ApplicationController
   def index
   end  
 
+  def report
+    @subscriptions = Subscription.all
+  end  
+
 end
